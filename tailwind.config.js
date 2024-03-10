@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 export default {
   content: [
     "./index.html",
@@ -10,9 +12,6 @@ export default {
       'md': '678px',
       'lg': '1024px',
       'xl': '1440px'
-    },
-    fontFamily: {
-      'body': ["Ubuntu"],
     },
     extend: {
       colors: {
@@ -26,6 +25,13 @@ export default {
         'magnolia': 'hsl(217, 100%, 97%)',
         'alabaster': 'hsl(231, 100%, 99%)',
         'white': 'hsl(0, 0%, 100%)',
+      },
+      fontFamily: {
+        sans: ['Ubuntu', ...defaultTheme.fontFamily.sans]
+      },
+      backgroundImage: {
+        'main-mobile': "url('/images/bg-sidebar-mobile.svg')",
+        'main-desktop': "url('/images/bg-sidebar-desktop.svg')"
       },
     },
   },

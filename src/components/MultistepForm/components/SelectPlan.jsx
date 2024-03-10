@@ -21,16 +21,22 @@ const SelectPlan = ({onChange, step, multiFormData}) => {
   return (
     <div>
       {Object.values(step.plans).map(plan => (
-        <div key={plan.name} onClick={() => handlePlanChange(plan.id)} className={`${stepFormData.plan === plan.id ? 'border-2 border-red-600': ''}`}>
-          <p>{plan.name}</p>
-          <p>${plan.price[stepFormData.duration]}/{durations[stepFormData.duration].short}</p>
-          <p>{plan.discount[stepFormData.duration]}</p>
+        <div 
+          key={plan.name} 
+          onClick={() => handlePlanChange(plan.id)} 
+          className={`${stepFormData.plan === plan.id ? 'border-purplish-blue bg-Pastel-blue/10': ' border-light-gray'} border rounded-lg mb-3 flex p-4`}>
+          <img src={plan.icon} alt="icon" className="self-start "/>
+          <div className="info flex flex-col pl-4">
+            <p className="text-marine-blue font-medium">{plan.name}</p>
+            <p className="text-cool-gray text-[12px]">${plan.price[stepFormData.duration]}/{durations[stepFormData.duration].short}</p>
+            <p className="text-marine-blue text-[10px]">{plan.discount[stepFormData.duration]}</p>
+          </div>
         </div>
       ))}
-      <div>
-        <span>{durations.monthly.title}</span>  
+      <div className="flex items-center justify-around w-full bg-alabaster rounded-lg p-3 my-3">
+        <span className={`${stepFormData.duration === 'monthly' ? 'text-marine-blue' : 'text-cool-gray'} font-medium text-sm`}>{durations.monthly.title}</span>  
           <ToggleSwitch onChange={handleDurationToggleChange}/>
-        <span>{durations.yearly.title}</span>  
+        <span className={`${stepFormData.duration === 'yearly' ? 'text-marine-blue' : 'text-cool-gray'} font-medium text-sm`}>{durations.yearly.title}</span>  
       </div>
     </div>
   )

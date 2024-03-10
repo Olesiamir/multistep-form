@@ -6,7 +6,11 @@ const PersonalInfo = ({onChange, step, multiFormData}) => {
   const handleChange = (e) => {
     onChange(step.id, {
       ...stepFormData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      validation: {
+        ...stepFormData.validation,
+        [e.target.name]: ''
+      } 
     })
   }
 
@@ -21,15 +25,15 @@ const PersonalInfo = ({onChange, step, multiFormData}) => {
         value={stepFormData.name || ''} 
         onChange={handleChange} />
       <TextInput
-        label="Email"
+        label="Email Address"
         type="email"
         name='email' 
-        placeholder="e.g. stephenking@loremipsum.com" 
+        placeholder="e.g. stephenking@lorem.com" 
         errorText={stepFormData.validation?.email}
         value={stepFormData.email || ''} 
         onChange={handleChange} />
       <TextInput
-        label="Phone"
+        label="Phone Number"
         type="phone"
         name='phone' 
         errorText={stepFormData.validation?.phone}

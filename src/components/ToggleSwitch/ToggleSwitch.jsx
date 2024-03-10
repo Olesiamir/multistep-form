@@ -20,16 +20,13 @@ const ToggleSwitch = ({onChange}) => {
           onChange={handleCheckboxChange}
         />
         <span
-          className={`slider mr-3 flex h-[26px] w-[50px] items-center rounded-full p-1 duration-200 bg-marine-blue`}
+          className={`slider mx-6 flex h-[20px] w-[38px] items-center rounded-full p-1 duration-200 bg-marine-blue`}
         >
           <span
-            className={`dot h-[18px] w-[18px] rounded-full bg-white duration-200 ${
-              isChecked ? 'translate-x-6' : ''
+            className={`dot h-[12px] w-[12px] rounded-full bg-white duration-200 ${
+              isChecked ? 'translate-x-[1.1rem]' : ''
             }`}
           ></span>
-        </span>
-        <span className='label flex items-center text-sm font-medium text-black'>
-          
         </span>
       </label>
     </>
