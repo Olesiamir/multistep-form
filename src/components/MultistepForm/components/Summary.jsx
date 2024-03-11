@@ -20,19 +20,32 @@ const Summary = ({step, multiFormData, onStepIndexChange}) => {
   }
 
   return (
-    <div>
-      <p>{currentPlanDetails.name}({currentDurationDetails.title}) <span>${durationPrice}/{currentDurationDetails.short}</span> </p>
-      <button onClick={handleClick}>Change</button>
-      <div> 
-        {pickAddons.selectedAddons.map(addon => {
-          const addonDetails = pickAddonsDetails.addons[addon]
-          const addonPrice = addonDetails.price[selectPlan.duration]
-         return  <p key={addon}>{addonDetails.name} <span>${addonPrice}/{currentDurationDetails.short}</span> </p>
-        }
-        )}
+    <div className="">
+      <div className="bg-alabaster rounded-md px-4 pt-6">
+        <div className="border-b border-b-light-gray flex justify-between items-center">
+          <div className="pb-3">
+            <p className="text-marine-blue text-base font-medium">{currentPlanDetails.name} ({currentDurationDetails.title})</p> 
+            <button className="text-cool-gray text-sm underline" onClick={handleClick}>Change</button>
+          </div>
+          <p className="text-marine-blue text-sm font-bold">${durationPrice}/{currentDurationDetails.short}</p>
+        </div>
+        <div className="pt-4"> 
+          {pickAddons.selectedAddons.map(addon => {
+            const addonDetails = pickAddonsDetails.addons[addon]
+            const addonPrice = addonDetails.price[selectPlan.duration]
+          return  (
+            <div className="flex justify-between items-center pb-4">
+            <p key={addon} className="text-cool-gray text-sm ">{addonDetails.name}</p>
+            <span className="text-marine-blue text-sm">+${addonPrice}/{currentDurationDetails.short}</span>
+            </div>
+            )
+          }
+          )}
+        </div>
       </div>
-      <div>
-        <p>Total per {currentDurationDetails.period}</p> <span>+${calculateTotal()}/{currentDurationDetails.short}</span>
+      <div className="flex justify-between items-center px-4 pt-7">
+        <p className="text-cool-gray text-sm ">Total per ({currentDurationDetails.period})</p> 
+        <span className="text-purplish-blue text-sm font-bold">+${calculateTotal()}/{currentDurationDetails.short}</span>
       </div>
     </div>
     

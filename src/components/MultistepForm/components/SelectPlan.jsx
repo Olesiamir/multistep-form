@@ -12,8 +12,8 @@ const SelectPlan = ({onChange, step, multiFormData}) => {
   const handlePlanChange = (value) => {
     handleChange('plan', value)
   }
-  const handleDurationToggleChange = (isChecked) => {
-    const duration = isChecked ? durations.yearly.id : durations.monthly.id
+  const handleDurationToggleChange = () => {
+    const duration = stepFormData.duration === durations.monthly.id ? durations.yearly.id : durations.monthly.id
     handleChange('duration', duration)
   }
 
@@ -35,7 +35,7 @@ const SelectPlan = ({onChange, step, multiFormData}) => {
       ))}
       <div className="flex items-center justify-around w-full bg-alabaster rounded-lg p-3 my-3">
         <span className={`${stepFormData.duration === 'monthly' ? 'text-marine-blue' : 'text-cool-gray'} font-medium text-sm`}>{durations.monthly.title}</span>  
-          <ToggleSwitch onChange={handleDurationToggleChange}/>
+          <ToggleSwitch isChecked={stepFormData.duration === 'yearly'} onChange={handleDurationToggleChange}/>
         <span className={`${stepFormData.duration === 'yearly' ? 'text-marine-blue' : 'text-cool-gray'} font-medium text-sm`}>{durations.yearly.title}</span>  
       </div>
     </div>

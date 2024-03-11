@@ -55,7 +55,7 @@ const selectPlan = {
     arcade: {
       id: 'arcade',
       name: 'Arcade',
-      icon: "../public/images/icon-arcade.svg",
+      icon: "/public/images/icon-arcade.svg",
       price: {
         monthly: 9,
         yearly: 90
@@ -67,7 +67,7 @@ const selectPlan = {
     advanced: {
       id: 'advanced',
       name: 'Advanced',
-      icon: "../public/images/icon-advanced.svg",
+      icon: "/public/images/icon-advanced.svg",
       price: {
         monthly: 12,
         yearly: 120
@@ -79,7 +79,7 @@ const selectPlan = {
     pro: {
       id: 'pro',
       name: 'Pro',
-      icon: "../public/images/icon-pro.svg",
+      icon: "/public/images/icon-pro.svg",
       price: {
         monthly: 15,
         yearly: 150
@@ -148,6 +148,6 @@ const durations = {
   yearly: {id:'yearly', title: 'Yearly', short:'yr', period:'year'}
 }
 
-const steps = [pickAddons, selectPlan, personalInfo, summary]
+const steps = [personalInfo, selectPlan, pickAddons, summary]
 
 export { steps, stepComponents, durations, selectPlan, pickAddons }
