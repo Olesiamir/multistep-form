@@ -20,12 +20,16 @@ const PickAddons = ({onChange, step, multiFormData}) => {
   }
   return (
     <div>
-      {Object.values(step.addons).map(addon => (
-        <div key={addon.name} onClick={() => handleAddonChange(addon.id)} className={`${stepFormData.selectedAddons.includes(addon.id)? 'border-2 border-red-600': ''}`}>
-          <p>{addon.name}</p>
-          <p>{addon.description}</p>
-          <p>${addon.price[planData.duration]}/{durations[planData.duration].short}</p>
+      {Object.values(step.addons).map(addon => ( 
+        <div key={addon.name} onClick={() => handleAddonChange(addon.id)} className={`${stepFormData.selectedAddons.includes(addon.id) ? 'border-purplish-blue bg-Pastel-blue/10': ' border-light-gray'} border flex justify-between items-center rounded-lg mb-3 p-2.5`}>
+            <input type="checkbox" checked={stepFormData.selectedAddons.includes(addon.id)} className='rounded-md w-5 h-5 accent-purplish-blue'/>
+          <div className="info flex-1 pl-4">
+            <p className="text-marine-blue text-sm font-medium">{addon.name}</p>
+            <p className="text-cool-gray text-[12px]">{addon.description}</p>
+          </div>
+          <p className="text-[12px] text-purplish-blue">+${addon.price[planData.duration]}/{durations[planData.duration].short}</p>
         </div>
+        
       ))}
     </div>
   )

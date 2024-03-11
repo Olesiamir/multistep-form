@@ -148,6 +148,6 @@ const durations = {
   yearly: {id:'yearly', title: 'Yearly', short:'yr', period:'year'}
 }
 
-const steps = [selectPlan, personalInfo, pickAddons, summary]
+const steps = [pickAddons, selectPlan, personalInfo, summary]
 
 export { steps, stepComponents, durations, selectPlan, pickAddons }
