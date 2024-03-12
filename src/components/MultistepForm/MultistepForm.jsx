@@ -4,11 +4,17 @@ import FormCard from './components/FormCard'
 import Congrats from './components/Congrats'
 
 
-const StepIndicator = ({index, isActive}) => {
+const StepIndicator = ({index, isActive, step}) => {
 
   return (
-    <div className={`${isActive ? 'bg-white text-marine-blue' : 'bg-transparent  text-white'} cursor-pointer h-[35px] w-[35px] flex items-center justify-center rounded-full box-border border-white border-[1px] text-sm font-medium`}>
-      {index + 1}
+    <div>
+      <div className={`${isActive ? 'bg-white text-marine-blue' : 'bg-transparent  text-white'} cursor-pointer h-[35px] w-[35px] flex items-center justify-center rounded-full box-border border-white border-[1px] text-sm font-medium`}>
+        {index + 1}
+      </div>
+      <div>
+        <p>Step {index + 1}</p>
+        <p>{step.name}</p> 
+      </div>
     </div>
   )
 }
@@ -89,8 +95,8 @@ const MultistepForm = () => {
 
   const StepForm = stepComponents[step.id]
   return (
-    <div className=' left-4 h-full flex flex-col items-center z-10'>
-      <div className='flex gap-4 h-[100px] items-center'>
+    <div className=' left-4 h-full flex flex-col items-center md:bg-main-desktop md:bg-no-repeat md:bg-white  md:flex-row md:bg-left'>
+      <div className='flex gap-4 h-[100px] items-center md:flex-col md:items-center md:justify-center md:h-full'>
         {steps.map((step, index) => (
           <StepIndicator key={step.id} step={step} index={index} isActive={index === currentIndex}/> 
         ))}
