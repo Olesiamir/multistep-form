@@ -11,7 +11,7 @@ const StepIndicator = ({index, isActive, step}) => {
       <div className={`${isActive ? 'bg-white text-marine-blue' : 'bg-transparent  text-white'} cursor-pointer h-[35px] w-[35px] flex items-center justify-center rounded-full box-border border-white border-[1px] text-sm font-medium`}>
         {index + 1}
       </div>
-      <div className='sm:hidden md:inline-block md:pl-4'>
+      <div className='hidden md:inline-block md:pl-4'>
         <p className='text-light-blue text-[12px] uppercase'>Step {index + 1}</p>
         <p className='uppercase text-white font-medium text-sm'>{step.name}</p> 
       </div>
@@ -112,7 +112,7 @@ const MultistepForm = () => {
           {/* <div className='footer w-full h-[71px] bg-white absolute bottom-0 '></div> */}
           <div className={`${isFirstStep ? 'justify-end' : 'justify-between'} footer flex self-end w-full items-center h-[71px] fixed bottom-0 bg-white px-4 md:w-auto 
           md:static md:col-start-14 md:col-span-9 md:row-start-21 md:row-span-3 md:p-0 lg:col-start-11 lg:col-span-12 lg:row-start-21 lg:row-span-3 `}>
-            {!isFirstStep && <button className='h-10 text-sm font-medium flex rounded items-center justify-center bg-white text-cool-gray' onClick={handleBackClick}>Go Back</button>}            
+            {!isFirstStep && <button className='h-10 text-sm font-medium flex rounded items-center justify-center bg-white text-cool-gray md:hover:text-marine-blue' onClick={handleBackClick}>Go Back</button>}            
             {isLastStep 
             ? 
             <button className='h-10 w-24 md:w-28 text-sm  flex rounded items-center justify-center bg-marine-blue text-magnolia hover:bg-purplish-blue cursor-pointer' onClick={handleNextClick}>Confirm</button> 
