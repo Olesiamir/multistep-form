@@ -11,12 +11,12 @@ const personalInfo = {
   validators : {
     name: function(value) {
       if(!value) {
-        return 'Name cannot be blank'
+        return 'This field is required'
       }
     },
     email: function(value) {
       if(!value) {
-        return 'email cannot be blank'
+        return 'This field is required'
       }
 
       const validateEmail = (email) => {
@@ -33,10 +33,10 @@ const personalInfo = {
     phone: function(value) {
       const pattern = new RegExp("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$");
       if(!value) {
-        return 'Phone cannot be blank'
+        return 'This field is required'
       }
       if(!pattern.test(value)){
-        return 'Phone is invalid'
+        return 'Phone number is invalid'
       }
     }
   }

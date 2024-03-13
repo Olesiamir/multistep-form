@@ -19,14 +19,15 @@ const SelectPlan = ({onChange, step, multiFormData}) => {
 
 
   return (
-    <div>
+    <div className="lg:flex lg:flex-row flex-wrap gap-4 justify-between">
       {Object.values(step.plans).map(plan => (
         <div 
           key={plan.name} 
           onClick={() => handlePlanChange(plan.id)} 
-          className={`${stepFormData.plan === plan.id ? 'border-purplish-blue bg-Pastel-blue/10': ' border-light-gray'} border rounded-lg mb-3 flex p-4`}>
+          className={`${stepFormData.plan === plan.id ? 'border-purplish-blue bg-Pastel-blue/10': ' border-light-gray'} border 
+          rounded-lg mb-3 flex p-4 lg:w-[138px] lg:h-[160px] lg:flex-col lg:justify-between md:hover:border-purplish-blue cursor-pointer`}>
           <img src={plan.icon} alt="icon" className="self-start "/>
-          <div className="info flex flex-col pl-4">
+          <div className="info flex flex-col pl-4 lg:p-0 lg:text-start">
             <p className="text-marine-blue font-medium">{plan.name}</p>
             <p className="text-cool-gray text-[12px]">${plan.price[stepFormData.duration]}/{durations[stepFormData.duration].short}</p>
             <p className="text-marine-blue text-[10px]">{plan.discount[stepFormData.duration]}</p>

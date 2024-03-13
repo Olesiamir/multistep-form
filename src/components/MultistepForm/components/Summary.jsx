@@ -20,12 +20,12 @@ const Summary = ({step, multiFormData, onStepIndexChange}) => {
   }
 
   return (
-    <div className="">
-      <div className="bg-alabaster rounded-md px-4 pt-6">
+    <div className="mb-10">
+      <div className="bg-alabaster rounded-md px-4 pt-6 ">
         <div className="border-b border-b-light-gray flex justify-between items-center">
           <div className="pb-3">
             <p className="text-marine-blue text-base font-medium">{currentPlanDetails.name} ({currentDurationDetails.title})</p> 
-            <button className="text-cool-gray text-sm underline" onClick={handleClick}>Change</button>
+            <button className="text-cool-gray text-sm underline  cursor-pointer hover:text-purplish-blue" onClick={handleClick}>Change</button>
           </div>
           <p className="text-marine-blue text-sm font-bold">${durationPrice}/{currentDurationDetails.short}</p>
         </div>
