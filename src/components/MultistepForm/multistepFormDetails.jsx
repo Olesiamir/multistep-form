@@ -6,7 +6,7 @@ import Summary from './components/Summary'
 const personalInfo = {
   id: 'personalInfo',
   name: 'your info', 
-  title: 'Personal Info',
+  title: 'Personal info',
   description: 'Please provide your name, email address, and phone number.',
   validators : {
     name: function(value) {
